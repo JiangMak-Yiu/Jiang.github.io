@@ -1,0 +1,1253 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>bot | 江江JiangYiu</title><meta name="keywords" content="Bot"><meta name="author" content="Jiang-Mak Yiu"><meta name="copyright" content="Jiang-Mak Yiu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="bot"><meta name="application-name" content="bot"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="bot"><meta property="og:url" content="http://example.com/2024/07/29/bot/index.html"><meta property="og:site_name" content="江江JiangYiu"><meta property="og:description" content="聊天 [BOT名字]  [戳一戳BOT]  空调开  空调关  群温度  设置温度[正整数] 聊天时长统计 查询水群@xxx  查看水群排名 睡眠管理 早安 | 晚安 ATRI 具体指令看 &amp;#x2F;用法 atri  注：本插件基于 ATRI ，为 Golang 移植版  群管 禁言[@xxx]["><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://img.picgo.net/2024/07/28/_202407281210271478398c6bfc01dd.md.jpg"><meta property="article:author" content="Jiang-Mak Yiu"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://img.picgo.net/2024/07/28/_202407281210271478398c6bfc01dd.md.jpg"><meta name="description" content="聊天 [BOT名字]  [戳一戳BOT]  空调开  空调关  群温度  设置温度[正整数] 聊天时长统计 查询水群@xxx  查看水群排名 睡眠管理 早安 | 晚安 ATRI 具体指令看 &amp;#x2F;用法 atri  注：本插件基于 ATRI ，为 Golang 移植版  群管 禁言[@xxx]["><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="http://example.com/2024/07/29/bot/"><link rel="preconnect" href="//cdn.cbd.int"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: undefined,
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: {"enable":true,"default":"晚上好👋","list":[{"greeting":"晚安😴","startTime":0,"endTime":5},{"greeting":"早上好鸭👋, 祝你一天好心情！","startTime":6,"endTime":9},{"greeting":"上午好👋, 状态很好，鼓励一下～","startTime":10,"endTime":10},{"greeting":"11点多啦, 在坚持一下就吃饭啦～","startTime":11,"endTime":11},{"greeting":"午安👋, 宝贝","startTime":12,"endTime":14},{"greeting":"🌈充实的一天辛苦啦！","startTime":14,"endTime":18},{"greeting":"19点喽, 奖励一顿丰盛的大餐吧🍔。","startTime":19,"endTime":19},{"greeting":"晚上好👋, 在属于自己的时间好好放松😌~","startTime":20,"endTime":24}]},
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: {"apiurl":"https://friends.anheyu.com/"},
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: {"skills":["🤖️ 数码科技爱好者","🔍 分享与热心帮助","🏠 智能家居小能手","🔨 设计开发一条龙","🤝 专修交互与设计","🏃 脚踏实地行动派","🧱 团队小组发动机","💢 壮汉人狠话不多"]},
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: Jiang-Mak Yiu","link":"链接: ","source":"来源: 江江JiangYiu","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '江江JiangYiu',
+  title: 'bot',
+  postAI: '',
+  pageFillDescription: '聊天, 聊天时长统计, 睡眠管理, ATRI, 群管, 定时指令触发器, 中优先级, ahsai tts, AIfalse, AIWife, 支付宝到账语音, 触发者撤回时也自动撤回, base16384加解密, 加密xxx, 百度内容审核, base64卦加解密, base天城文加解密, , b站动态、专栏、视频、直播解析, b站动态、直播推送需要配合job一起使用, 书评, 书评[xxx], 选择困难症帮手, 抽象话, 英文字符翻转, coser, cp短打, 今日早报, DeepDanbooru二次元图标签识别, 嘉然, 程序员做饭指南, 多功能抽签, 漂流瓶, 合成emoji, 好友申请及群聊邀请事件处理, 渲染任意文字到图片, 每日运势, 笑话, 原神抽卡, gif, GitHub仓库搜索, 猜歌, 一言, 炉石, 百人一首, 注入指令, 煎蛋网无聊图, 日语听力学习材料, 疯狂星期四, kokomi原神面板, lolicon, 桑帛云 API, MagicPrompt-Stable-Diffusion吟唱提示, 钓鱼模拟器, 简易midi音乐制作, 日韩 VITS 模型拟声, 摸鱼, 摸鱼人日历, 点歌, 本地涩图, 抽wife, 拼音首字母释义工具, 日语语法学习, 小说, nsfw图片识别, 浅草寺求签, 抽扑克, 一群一天一夫一妻制群老婆, qq空间表白墙, Real-CUGAN清晰术, 投胎, 打劫, 在线代码运行, 搜图, 签到得分, 沙雕app, shindan, steam, 抽塔罗牌, 抽[塔罗牌|大阿卡纳|小阿卡纳], 舔狗日记, 搜番, 翻译, vits猫雷, vtb语录, 钱包, 据意查句, 星际战甲, 百度文心AI, 抽老婆, 聊天热词, 猜单词, 鬼东西, 一些游戏王插件, 集换社卡价查询, 月幕galgame图, 遇见API, 低优先级, 人工智能回复, @Bot 任意文本(任意一句话回复), 词典匹配回复, 打断复读聊天名字戳一戳空调开空调关群温度设置温度正整数聊天时长统计查询水群查看水群排名睡眠管理早安晚安具体指令看用法注本插件基于为移植版群管禁言分钟解除禁言我要自闭禅定分钟小时天开启全员禁言解除全员禁言升为管理取消管理修改名片修改头衔申请头衔踢出群聊退出群聊群号入群欢迎退群通知设置欢迎语欢迎可选添加在月日的点分时用提醒大家在月每周周几的点分时用提醒大家取消在月日的点分的提醒取消在月每周周几的点分的提醒在时用提醒大家取消在的提醒列出所有提醒翻牌赞我开启关闭入群验证开启关闭加群自动审批对信息回复设置取消精华取消精华信息精华列表同意好友请求对信息回复撤回警告注使用加群自动审批请在群介绍添加以下说明同时开启需要回答问题并由管理员审核加群请在新建一个其文件名为本群群号的字符串的小写内容为一行是当前时间戳分钟内有效然后请将您的用户名和哈希小写按照的格式填写到回答即可设置欢迎语可选添加参数说明可在发送时艾特被欢迎者是被欢迎者名字是被欢迎者头像是被欢迎者号是当前群群号是当前群群名定时指令触发器注意触发器具有限速每仅允许最多一次触发记录以完全匹配关键词触发的代表我执行的指令取消以完全匹配关键词触发的代表我执行的指令记录在触发的别名的指令取消在触发的指令查看所有触发指令查看在触发的指令查看以完全匹配关键词触发的代表我执行的指令注入指令结果任意指令执行指令任意指令注任意指令可以使用形如参数提示语参数提示语可选参数提示语不回答将填入空值从获取的参数可选的从获取的参数出错将填入空值的未定参数在注入时一一匹配一些示例每日推送摸鱼人日历记录在触发的指令每日以概率执行指令记录在触发的指令注入指令结果今天没有哦每日询问设置定时者否想看记录在触发的指令注入指令结果想看吗想好吧自行编写简易的选择困难症助手小插件记录以简易的选择困难症助手触发的指令执行指令您最终会选请输入您的选择您最终会选请输入您的选择简易的选择困难症助手自行编写随机站页趣图插件记录以随机站页趣图触发的代表我执行的指令注入指令结果随机站页趣图我大家有人说问正则表达式你答说做执行模版查看看看我大家有人说问正则表达式删除大家有人我说问让你做让你执行正则表达式注模版是指含有这样的未定参数会在正则匹配时按顺序填入子匹配对应值中优先级使伊織弓鶴紲星結月京町東北東北標準語関西弁音街琴葉茜吉田民安桜乃月読琴葉葵東北子月読水奈瀬说日语查询计算机当前活跃度检查身体自检启动自检系统状态设置默认限速为每分钟秒次触发随机从个生成的中随机一位支付宝到账语音支付宝到账触发者撤回时也自动撤回撤回一条消息加解密加密解密用加密用解密百度内容审核获取配置获取开启关闭内容审核开启关闭撤回提示开启关闭详细提示开启关闭撤回禁言开启关闭禁言累加开启关闭文本检测开启关闭图像检测设置最大禁言时间分钟默认最大设置每次累加时间分钟默认设置撤回禁言时间分钟默认查看检测类型查看检测配置测试文本检测文本内容测试图像检测图片设置检测类型类型编号设置不检测类型类型编号检测类型编号列表违禁违规文本色情敏感信息恶意推广低俗辱骂恶意推广联系方式恶意推广软文推广卦加解密六十四卦加密六十四卦解密六十四卦用加密六十四卦用解密天城文加解密天城文加密天城文解密天城文用加密天城文用解密查成分查弹幕最后一个参数是页码设置站最好把设全获取可以使用这个工具更新站动态专栏视频直播解析站动态直播推送需要配合一起使用添加站订阅取消站订阅取消站动态订阅取消站直播订阅站推送列表拉取站推送使用执行定时任务记录在触发的指令书评书评随机书评选择困难症帮手选择选择项还是选项还是更多选项抽象话抽象翻译英文字符翻转翻转短打组磕大老师雪乃今日早报今日早报二次元图标签识别鉴赏图片图片嘉然小作文发大病教你一篇小作文作文程序员做饭指南怎么做烹饪菜名随机菜谱随便做点菜多功能抽签支持图包文件夹和抽签刷新抽签列表抽签名签看签签名加签签名图片删签签名漂流瓶随机捞一个漂流瓶投递内容支持图片文字投递内容需要大于个字符或者带有图片合成好友申请及群聊邀请事件处理开启关闭自动同意申请邀请主人同意拒绝申请邀请跟随事件一起发送默认同意主人的事件渲染任意文字到图片用终末体终末变体紫罗兰体樱酥体体粗苹方体未来荧黑体体八丸体体猫啃体苹方体渲染抖动文字每日运势运势抽签设置底图车万爱因斯坦星空列车樱云之恋富婆妹李清歌公主连结原神明日方舟碧蓝航线碧蓝幻想战双阴阳师赛马娘东方归言录奇异恩典夏日口袋笑话讲个笑话号人名夸夸号人名原神抽卡切换原神卡池原神十连爬冲摸搓拍丢敲吃啃撕蹭灰度上翻下翻左翻右翻反色倒放浮雕打码负片仓库搜索猜歌猜歌插件该插件依赖主人指令设置猜歌歌库路径绝对路径创建删除歌单歌单名称下载歌曲歌曲名称网易云歌曲到歌单名称管理员指令设置猜歌默认歌单歌单名称上传歌曲群文件的音乐名到歌单名称公用指令歌单列表个人团队猜歌插件扩展本插件内置了框架的一些功能设置猜歌帮助设置猜歌首页网址猜歌开启关闭歌单歌词自动下载登录网易云歌单信息网易云歌单链接歌单名称绑定网易云网易云歌单链接下载歌单网易云歌单链接到歌单名称解除绑定歌单名称一言一言系列一言炉石搜卡卡组代码注更多搜卡指令参数百人一首百人一首百人一首之注入指令码煎蛋网无聊图来份屌弔吊图更新屌弔吊图日语听力学习材料随机日语听力随机日语歌曲日语听力日语歌曲疯狂星期四疯狂星期四原神面板菜单面板注本插件未并入主仓库需自行安装须源码方式运行才能添加插件安装地址原神面板查询插件随机图片随机图片萝莉少女设置随机图片地址每一小时发一张图记录在触发的指令来份萝莉桑帛云随机妹子随机绕口令颜值鉴定图片随机情话发病嘉然让嘉然塔菲东雪莲懒羊羊科比孙笑川陈泽丁真空荧派蒙纳西妲阿贝多温迪枫原万叶钟离荒泷一斗八重神子艾尔海森提纳里迪希雅卡维宵宫莱依拉赛诺诺艾尔托马凝光莫娜北斗神里绫华雷电将军芭芭拉鹿野院平藏五郎迪奥娜凯亚安柏班尼特琴柯莱夜兰妮露辛焱珐露珊魈香菱达达利亚砂糖早柚云堇刻晴丽莎迪卢克烟绯重云珊瑚宫心海胡桃可莉流浪者久岐忍神里绫人甘雨戴因斯雷布优菈菲谢尔行秋白术九条裟罗雷泽申鹤迪娜泽黛凯瑟琳多莉坎蒂丝萍姥姥罗莎莉亚留云借风真君绮良良瑶瑶七七奥兹米卡夏洛蒂埃洛伊博士女士大慈树王三月七娜塔莎希露瓦虎克克拉拉丹恒希儿布洛妮娅瓦尔特杰帕德佩拉姬子艾丝妲白露星穹桑博伦纳德停云罗刹卡芙卡彦卿史瓦罗螺丝咕姆阿兰银狼素裳丹枢黑塔景元帕姆可可利亚半夏符玄公输师傅奥列格青雀大毫青镞费斯曼绿芙蓉镜流信使丽塔失落迷迭缭乱星棘伊甸伏特加女孩狂热蓝调莉莉娅萝莎莉娅八重樱八重霞卡莲第六夜想曲卡萝尔姬子极地战刃布洛妮娅次生银翼理之律者真理之律者迷城骇兔希儿魇夜星渊黑希儿帕朵菲莉丝天元骑英幽兰黛尔德丽莎月下初拥朔夜观星暮光骑士明日香李素裳格蕾修梅比乌斯渡鸦人之律者爱莉希雅爱衣天穹游侠琪亚娜空之律者终焉之律者薪炎之律者云墨丹心符华识之律者维尔薇始源之律者芽衣雷之律者苏莎娜阿波尼亚陆景和莫弈夏彦左然说我测尼玛吟唱提示吟唱提示钓鱼模拟器钓鱼商店购买数量出售数量所有垃圾钓鱼背包装备竿三叉戟美西螈附魔诱钓海之眷顾修复鱼竿合成竿三叉戟进行钓鱼进行次钓鱼简易音乐制作制作个人听音练习团队听音练习转制作转设置音色注该插件需要安装安装脚本可参考安装脚本可参考需要管理员模式运行符号说明是中央后面不写数字默认接代表降调代表升调比高八度代表音长代表音长代表音长代表音长是休止符日韩模型拟声让派蒙空荧阿贝多枫原万叶温迪八重神子纳西妲钟离诺艾尔凝光托马北斗莫娜荒泷一斗提纳里芭芭拉艾尔海森雷电将军赛诺琴班尼特五郎神里绫华迪希雅夜兰辛焱安柏宵宫云堇妮露烟绯鹿野院平藏凯亚达达利亚迪卢克可莉早柚香菱重云刻晴久岐忍珊瑚宫心海迪奥娜戴因斯雷布魈神里绫人丽莎优菈凯瑟琳雷泽菲谢尔九条裟罗甘雨行秋胡桃迪娜泽黛柯莱申鹤砂糖萍姥姥奥兹罗莎莉亚式大将哲平坎蒂丝托克留云借风真君昆钧塞琉斯多莉大肉丸莱依拉散兵拉赫曼杜拉夫阿守玛乔丽纳比尔海芭夏九条镰治阿娜耶阿晃阿扎尔七七博士白术埃洛伊大慈树王女士丽塔失落迷迭缭乱星棘伊甸伏特加女孩狂热蓝调莉莉娅萝莎莉娅八重樱八重霞卡莲第六夜想曲卡萝尔姬子极地战刃布洛妮娅次生银翼理之律者迷城骇兔希儿魇夜星渊黑希儿帕朵菲莉丝天元骑英幽兰黛尔德丽莎月下初拥朔夜观星暮光骑士明日香李素裳格蕾修梅比乌斯渡鸦人之律者爱莉希雅爱衣天穹游侠琪亚娜空之律者薪炎之律者云墨丹心符华识之律者维尔薇芽衣雷之律者阿波尼亚说中文摸鱼启用禁用记录在触发的指令摸鱼提醒摸鱼人日历启用禁用记录在触发的指令摸鱼人日历点歌点歌网易点歌酷我点歌酷狗点歌本地涩图本地刷新本地设置本地绝对路径刷新所有本地所有本地分类注刷新文件夹较慢请耐心等待刷新完成会提示成功抽抽添加名字图片删除名字让不让所有人均可添加注不同群添加后不会重叠拼音首字母释义工具缩写日语语法学习日语语法使用随机搜索日语语法小说小说设置小说配置下载小说注建议去注册一个账号小说下载有积分限制图片识别打分图片当图片属于非类别时自动发送评价默认禁用启用输入启用浅草寺求签求签占卜解签抽扑克抽扑克牌一群一天一夫一妻制群老婆引入好感度系统好感度越高自由恋爱成功率越高设置为小时允许禁止自由恋爱允许禁止牛头人娶群友娶嫁对方当对方号对方的小三做媒攻方受方买礼物给对方号对方群老婆列表查好感度对方号对方好感度列表重置花名册空间表白墙登录空间过期很快要经常登录发说说匿名发表白墙同意拒绝表白墙最后一个参数是表白墙的序号数组用英文逗号连接查看等待同意拒绝所有表白墙最后一个参数是页码建议私聊审稿清晰术清晰术双重吟唱三重吟唱四重吟唱强力术式中等术式弱术式不变式原式图片投胎注本插件来源于打劫打劫对方号对方在线代码运行搜图以图搜图搜索图片以图识图图片搜图站图片设置签到得分签到获得签到背景获得签到背景设置签到预设查看等级排名注跨群排行查看我的钱包查看钱包排名注本群排行若群人数太多不建议使用该功能沙雕哄我渣我来碗绿茶发个朋友圈来碗毒鸡汤讲个段子马丁路德骂我今天是什么少女异世界转生卖萌今日老婆黄油角色添加删除订阅查询订阅绑定查看拉取订阅使用执行定时任务记录在触发的指令抽塔罗牌抽塔罗牌大阿卡纳小阿卡纳抽张塔罗牌大阿卡纳小阿卡纳解塔罗牌牌名塔罗大阿卡纳小阿卡纳混合牌阵圣三角时间之流四要素五牌阵吉普赛十字马蹄六芒星舔狗日记舔狗日记搜番搜番搜索番剧图片翻译你好猫雷让猫雷说语录语录随机更新钱包查看我的钱包查看钱包排名据意查句据意查句大海登录据意查句星际战甲时间同步金星地球火卫二平原状态物品名称仲裁警报每日特惠百度文心基于百度文心的一些功能申请链接为自己本群号群群号设置文心为自己本群号群群号设置画图例为设置画图为群设置画图文心和画图的可以是相同的只是文心日限为画图日限为以此作区别文心作文字的作文题目文心提案字的文案标题文心摘要字的文章内容文心小说字的小说上文文心对联上联文心问答问题文心补全带的填空题文心自定义名称画几张图片描述的图片类型图片尺寸指令示例文心作文我的椛椛机器人文心作文字的我的椛椛机器人花花帮我画几张金凤凰背景绚烂高饱和古风仙境高清古风的油画方图抽老婆抽老婆聊天热词热词群号消息数目热词猜单词个人猜单词团队猜单词团队六阶猜单词团队七阶猜单词鬼东西鬼东西列表查询鬼东西序号注由于需要科学默认注释一些游戏王插件注为搜索内容返回一张图片返回一张效果描述高级搜索集换社卡价查询查卡价卡名查卡价卡名稀有度稀有度查卡店卡名查卡店卡名稀有度注卡店只支持单个稀有度查询月幕图随机随机表情包表情包更新遇见小姐姐视频小姐姐视频黑丝视频白丝视频欲梦视频甜妹视频双倍快乐纯情女高萝莉视频玉足视频帅哥视频热舞视频吊带视频汉服视频极品狱卒清纯视频快手变装抖音变装萌娃视频穿搭视频完美身材御姐撒娇绿茶语音怼人语音随机骚话随机污句子随机美句土味情话让说我测尼玛低优先级人工智能回复任意文本任意一句话回复设置文字回复模式婧枫沫沫青云客小爱设置词典匹配回复切换傲娇可爱词库设置词库触发概率打断复读打断三次以上的复读',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-07-29 12:02:25',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://img.picgo.net/2024/07/23/IMG_202407235310_638x638ec87315675379510.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">江江JiangYiu</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/equipment/"><i class="anzhiyufont anzhiyu-icon-dice-d20 faa-tada" style="font-size: 0.9em;"></i><span> 我的装备</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://img.picgo.net/2024/07/23/_20240723211946f67d5b22d7fb333a.jpg" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://img.picgo.net/2024/07/23/_20240723211946f67d5b22d7fb333a.jpg"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://img.picgo.net/2024/07/26/_2024070911134861ff5a7df6c8509f.jpg" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://img.picgo.net/2024/07/26/_2024070911134861ff5a7df6c8509f.jpg"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Alist/" style="font-size: 1.05rem;">Alist<sup>1</sup></a><a href="/tags/Bot/" style="font-size: 1.05rem;">Bot<sup>1</sup></a><a href="/tags/DocKer/" style="font-size: 1.05rem;">DocKer<sup>1</sup></a><a href="/tags/Github/" style="font-size: 1.05rem;">Github<sup>1</sup></a><a href="/tags/windows/" style="font-size: 1.05rem;">windows<sup>2</sup></a><a href="/tags/%E5%9B%BE%E5%BA%8A/" style="font-size: 1.05rem;">图床<sup>1</sup></a><a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size: 1.05rem;">安全<sup>1</sup></a><a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 1.05rem;">工具<sup>2</sup></a><a href="/tags/%E5%BC%80%E5%8F%91/" style="font-size: 1.05rem;">开发<sup>4</sup></a><a href="/tags/%E6%94%BB%E5%87%BB/" style="font-size: 1.05rem;">攻击<sup>1</sup></a><a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 1.05rem;">教程<sup>2</sup></a><a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 1.05rem;">服务器<sup>6</sup></a><a href="/tags/%E7%BD%91%E7%BB%9C%E8%B0%83%E8%AF%95/" style="font-size: 1.05rem;">网络调试<sup>1</sup></a><a href="/tags/%E8%BD%AF%E4%BB%B6/" style="font-size: 1.05rem;">软件<sup>3</sup></a><a href="/tags/%E9%AD%94%E6%B3%95/" style="font-size: 1.05rem;">魔法<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/07/"><span class="card-archive-list-date">七月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">11</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/Bot%E5%8A%9F%E8%83%BD/" itemprop="url">Bot功能</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Bot/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Bot</span></a></span></div></div><h1 class="post-title" itemprop="name headline">bot</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2024-07-29T04:00:47.000Z" title="发表于 2024-07-29 12:00:47">2024-07-29</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2024-07-29T04:02:25.251Z" title="更新于 2024-07-29 12:02:25">2024-07-29</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-pv-cv" id="" data-flag-title="bot"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label" title="阅读量">阅读量:</span><span id="busuanzi_value_page_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为长沙"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>长沙</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://img.picgo.net/2024/07/28/_202407281210271478398c6bfc01dd.md.jpg"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="http://example.com/2024/07/29/bot/"><header><a class="post-meta-categories" href="/categories/Bot%E5%8A%9F%E8%83%BD/" itemprop="url">Bot功能</a><a href="/tags/Bot/" tabindex="-1" itemprop="url">Bot</a><h1 id="CrawlerTitle" itemprop="name headline">bot</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">Jiang-Mak Yiu</span><time itemprop="dateCreated datePublished" datetime="2024-07-29T04:00:47.000Z" title="发表于 2024-07-29 12:00:47">2024-07-29</time><time itemprop="dateCreated datePublished" datetime="2024-07-29T04:02:25.251Z" title="更新于 2024-07-29 12:02:25">2024-07-29</time></header><h3 id="聊天"><a href="#聊天" class="headerlink" title="聊天"></a>聊天</h3><ul>
+<li><p>[BOT名字]</p>
+</li>
+<li><p>[戳一戳BOT]</p>
+</li>
+<li><p>空调开</p>
+</li>
+<li><p>空调关</p>
+</li>
+<li><p>群温度</p>
+</li>
+<li><p>设置温度[正整数]</p>
+<h3 id="聊天时长统计"><a href="#聊天时长统计" class="headerlink" title="聊天时长统计"></a>聊天时长统计</h3></li>
+<li><p>查询水群@xxx</p>
+</li>
+<li><p>查看水群排名</p>
+<h3 id="睡眠管理"><a href="#睡眠管理" class="headerlink" title="睡眠管理"></a>睡眠管理</h3></li>
+<li><p>早安 | 晚安</p>
+<h3 id="ATRI"><a href="#ATRI" class="headerlink" title="ATRI"></a>ATRI</h3></li>
+<li><p>具体指令看 &#x2F;用法 atri</p>
+<ul>
+<li>注：本插件基于 <a target="_blank" rel="noopener" href="https://github.com/Kyomotoi/ATRI">ATRI</a> ，为 Golang 移植版</li>
+</ul>
+<h3 id="群管"><a href="#群管" class="headerlink" title="群管"></a>群管</h3></li>
+<li><p>禁言[@xxx][分钟]</p>
+</li>
+<li><p>解除禁言[@xxx]</p>
+</li>
+<li><p>我要自闭 | 禅定 x [分钟 | 小时 | 天]</p>
+</li>
+<li><p>开启全员禁言</p>
+</li>
+<li><p>解除全员禁言</p>
+</li>
+<li><p>升为管理[@xxx]</p>
+</li>
+<li><p>取消管理[@xxx]</p>
+</li>
+<li><p>修改名片[@xxx][xxx]</p>
+</li>
+<li><p>修改头衔[@xxx][xxx]</p>
+</li>
+<li><p>申请头衔[xxx]</p>
+</li>
+<li><p>踢出群聊[@xxx]</p>
+</li>
+<li><p>退出群聊[群号]@Bot</p>
+</li>
+<li><p>*入群欢迎</p>
+</li>
+<li><p>*退群通知</p>
+</li>
+<li><p>设置欢迎语[欢迎~] 可选添加 [{at}] [{nickname}] [{avatar}] [{id}]</p>
+</li>
+<li><p>在[MM]月[dd]日的[hh]点[mm]分时(用[url])提醒大家[xxx]</p>
+</li>
+<li><p>在[MM]月[每周 | 周几]的[hh]点[mm]分时(用[url])提醒大家[xxx]</p>
+</li>
+<li><p>取消在[MM]月[dd]日的[hh]点[mm]分的提醒</p>
+</li>
+<li><p>取消在[MM]月[每周 | 周几]的[hh]点[mm]分的提醒</p>
+</li>
+<li><p>在”cron”时(用[url])提醒大家[xxx]</p>
+</li>
+<li><p>取消在”cron”的提醒</p>
+</li>
+<li><p>列出所有提醒</p>
+</li>
+<li><p>翻牌</p>
+</li>
+<li><p>赞我</p>
+</li>
+<li><p>[开启 | 关闭]入群验证</p>
+</li>
+<li><p>[开启 | 关闭]gist加群自动审批</p>
+</li>
+<li><p>对信息回复:[设置 | 取消]精华</p>
+</li>
+<li><p>取消精华 [信息ID]</p>
+</li>
+<li><p>&#x2F;精华列表</p>
+<ul>
+<li>同意好友请求</li>
+</ul>
+</li>
+<li><p>对信息回复: 撤回</p>
+<ul>
+<li>警告[@xxx]</li>
+<li>注：使用gist加群自动审批，请在群介绍添加以下说明，同时开启<code>需要回答问题并由管理员审核</code>：加群请在github新建一个gist，其文件名为本群群号的字符串的md5(小写)，内容为一行，是当前unix时间戳(10分钟内有效)。然后请将您的用户名和gist哈希(小写)按照username&#x2F;gisthash的格式填写到回答即可。</li>
+<li>设置欢迎语可选添加参数说明：{at}可在发送时艾特被欢迎者 {nickname}是被欢迎者名字 {avatar}是被欢迎者头像 {uid}是被欢迎者QQ号 {gid}是当前群群号 {groupname} 是当前群群名</li>
+</ul>
+<h3 id="定时指令触发器"><a href="#定时指令触发器" class="headerlink" title="定时指令触发器"></a>定时指令触发器</h3><ul>
+<li>注意：触发器具有限速，每 2s 仅允许最多一次触发</li>
+</ul>
+</li>
+<li><p>记录以”完全匹配关键词”触发的(代表我执行的)指令</p>
+</li>
+<li><p>取消以”完全匹配关键词”触发的(代表我执行的)指令</p>
+</li>
+<li><p>记录在”cron”触发的(别名xxx的)指令</p>
+</li>
+<li><p>取消在”cron”触发的指令</p>
+</li>
+<li><p>查看所有触发指令</p>
+</li>
+<li><p>查看在”cron”触发的指令</p>
+</li>
+<li><p>查看以”完全匹配关键词”触发的(代表我执行的)指令</p>
+</li>
+<li><p>注入指令结果：任意指令</p>
+</li>
+<li><p>执行指令：任意指令</p>
+<ul>
+<li>注：任意指令可以使用形如<code>?::参数1提示语::1!</code>,<code>?::参数2提示语::2!</code>,<code>?::?可选参数3提示语，不回答将填入空值::3!</code>,<code>!::从url获取的参数::4!</code>,<code>!::?可选的从url获取的参数，出错将填入空值::5!</code>的未定参数，在注入时一一匹配</li>
+<li>一些示例</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>每日9:30推送摸鱼人日历</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">记录在&quot;30 9 * * *&quot;触发的指令</span><br><span class="line">run[CQ:image,file=https://api.vvhan.com/api/moyu]</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>每日12:00以1&#x2F;2概率执行coser指令</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">记录在<span class="string">&quot;0 12 * * *&quot;</span>触发的指令</span><br><span class="line">注入指令结果：&gt;runcoderaw py</span><br><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">if</span> random() &gt; <span class="number">0.5</span>: <span class="built_in">print</span>(<span class="string">&#x27;coser&#x27;</span>)</span><br><span class="line"><span class="keyword">else</span>: <span class="built_in">print</span>(<span class="string">&#x27;今天没有coser哦~&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>每日15:00询问设置定时者否想看coser</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">记录在<span class="string">&quot;0 15 * * *&quot;</span>触发的指令</span><br><span class="line">注入指令结果：&gt;runcoderaw py</span><br><span class="line"><span class="keyword">if</span> <span class="string">&#x27;?::想看coser吗？::1!&#x27;</span> == <span class="string">&#x27;想&#x27;</span>: <span class="built_in">print</span>(<span class="string">&#x27;coser&#x27;</span>)</span><br><span class="line"><span class="keyword">else</span>: <span class="built_in">print</span>(<span class="string">&#x27;好吧&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>自行编写简易的选择困难症助手小插件</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">记录以<span class="string">&quot;简易的选择困难症助手&quot;</span>触发的指令</span><br><span class="line">执行指令：&gt;runcoderaw py</span><br><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">if</span> random() &gt; <span class="number">0.5</span>: <span class="built_in">print</span>(<span class="string">&#x27;您最终会选?::请输入您的选择1::1!&#x27;</span>)</span><br><span class="line"><span class="keyword">else</span>: <span class="built_in">print</span>(<span class="string">&#x27;您最终会选?::请输入您的选择2::2!&#x27;</span>)</span><br><span class="line">简易的选择困难症助手</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>自行编写随机b站404页趣图插件</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">记录以<span class="string">&quot;随机b站404页趣图&quot;</span>触发的代表我执行的指令</span><br><span class="line">注入指令结果：&gt;runcoderaw py</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line">j = json.loads(<span class="string">r&#x27;&#x27;&#x27;!::https://api.iyk0.com/bili_chart::1!&#x27;&#x27;&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;run[CQ:image,file=&quot;</span>+j[<span class="string">&quot;img&quot;</span>]+<span class="string">&quot;]&quot;</span>)</span><br><span class="line">随机b站<span class="number">404</span>页趣图</span><br></pre></td></tr></table></figure>
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://user-images.githubusercontent.com/41315874/157371451-c09ad3bb-c61a-4a42-9c47-fab3305bc0f8.png" alt="随机b站404页趣图"></p>
+<ul>
+<li>[我|大家|有人][说|问][正则表达式]你[答|说|做|执行][模版]</li>
+<li>[查看|看看][我|大家|有人][说|问][正则表达式]</li>
+<li>删除[大家|有人|我][说|问|让你做|让你执行][正则表达式]<ul>
+<li>注：模版是指含有<code>$1</code> <code>$2</code>这样的未定参数，会在正则匹配时按顺序填入子匹配对应值</li>
+</ul>
+</li>
+</ul>
+<h2 id="中优先级"><a href="#中优先级" class="headerlink" title="中优先级"></a><em>中优先级</em></h2><h3 id="ahsai-tts"><a href="#ahsai-tts" class="headerlink" title="ahsai tts"></a>ahsai tts</h3><ul>
+<li><p>使[ 伊織弓鶴 | 紲星あかり | 結月ゆかり | 京町セイカ |東北きりたん | 東北イタコ | ついなちゃん標準語 | ついなちゃん関西弁 | 音街ウナ | 琴葉茜 | 吉田くん | 民安ともえ | 桜乃そら | 月読アイ | 琴葉葵 | 東北ずん子 | 月読ショウタ | 水奈瀬コウ ]说(日语)</p>
+<h3 id="AIfalse"><a href="#AIfalse" class="headerlink" title="AIfalse"></a>AIfalse</h3></li>
+<li><p>查询计算机当前活跃度: [检查身体 | 自检 | 启动自检 | 系统状态]</p>
+</li>
+<li><p>设置默认限速为每 m [分钟 | 秒] n 次触发</p>
+<h3 id="AIWife"><a href="#AIWife" class="headerlink" title="AIWife"></a>AIWife</h3></li>
+<li><p>waifu | 随机waifu(从<a target="_blank" rel="noopener" href="https://www.thiswaifudoesnotexist.net/">100000个AI生成的waifu</a>中随机一位)</p>
+<h3 id="支付宝到账语音"><a href="#支付宝到账语音" class="headerlink" title="支付宝到账语音"></a>支付宝到账语音</h3></li>
+<li><p>支付宝到账 1</p>
+<h3 id="触发者撤回时也自动撤回"><a href="#触发者撤回时也自动撤回" class="headerlink" title="触发者撤回时也自动撤回"></a>触发者撤回时也自动撤回</h3></li>
+<li><p>撤回一条消息</p>
+<h3 id="base16384加解密"><a href="#base16384加解密" class="headerlink" title="base16384加解密"></a>base16384加解密</h3><h3 id="加密xxx"><a href="#加密xxx" class="headerlink" title="加密xxx"></a>加密xxx</h3></li>
+<li><p>解密xxx</p>
+</li>
+<li><p>用yyy加密xxx</p>
+</li>
+<li><p>用yyy解密xxx</p>
+<h3 id="百度内容审核"><a href="#百度内容审核" class="headerlink" title="百度内容审核"></a>百度内容审核</h3></li>
+<li><p>获取BDAkey</p>
+</li>
+<li><p>配置BDAKey [API Key] [Secret Key]</p>
+</li>
+<li><p>获取BDAkey</p>
+</li>
+<li><p>[开启|关闭]内容审核</p>
+</li>
+<li><p>[开启|关闭]撤回提示</p>
+</li>
+<li><p>[开启|关闭]详细提示</p>
+</li>
+<li><p>[开启|关闭]撤回禁言</p>
+</li>
+<li><p>[开启|关闭]禁言累加</p>
+</li>
+<li><p>[开启|关闭]文本检测</p>
+</li>
+<li><p>[开启|关闭]图像检测</p>
+</li>
+<li><p>设置最大禁言时间[分钟，默认:60,最大43200]</p>
+</li>
+<li><p>设置每次累加时间[分钟，默认:1]</p>
+</li>
+<li><p>设置撤回禁言时间[分钟，默认:1]</p>
+</li>
+<li><p>查看检测类型</p>
+</li>
+<li><p>查看检测配置</p>
+</li>
+<li><p>测试文本检测[文本内容]</p>
+</li>
+<li><p>测试图像检测[图片]</p>
+</li>
+<li><p>设置检测类型[类型编号]</p>
+</li>
+<li><p>设置不检测类型[类型编号]</p>
+<p>检测类型编号列表:[1:违禁违规|2:文本色情|3:敏感信息|4:恶意推广|5:低俗辱骂|6:恶意推广-联系方式|7:恶意推广-软文推广]</p>
+<h3 id="base64卦加解密"><a href="#base64卦加解密" class="headerlink" title="base64卦加解密"></a>base64卦加解密</h3><p>&#96;&#96;</p>
+</li>
+<li><p>六十四卦加密xxx</p>
+</li>
+<li><p>六十四卦解密xxx</p>
+</li>
+<li><p>六十四卦用yyy加密xxx</p>
+</li>
+<li><p>六十四卦用yyy解密xxx</p>
+<h3 id="base天城文加解密"><a href="#base天城文加解密" class="headerlink" title="base天城文加解密"></a>base天城文加解密</h3><p>&#96;&#96;</p>
+</li>
+<li><p>天城文加密xxx</p>
+</li>
+<li><p>天城文解密xxx</p>
+</li>
+<li><p>天城文用yyy加密xxx</p>
+</li>
+<li><p>天城文用yyy解密xxx</p>
+<h3 id="bilibili"><a href="#bilibili" class="headerlink" title="bilibili"></a><a target="_blank" rel="noopener" href="https://bakai9514.github.io/zbpGuide/#/modules?id=bilibili">bilibili</a></h3></li>
+<li><blockquote>
+<p>vup info [xxx]</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>user info [xxx]</p>
+</blockquote>
+</li>
+<li><p>查成分 [xxx]</p>
+</li>
+<li><p>查弹幕 [xxx] 2 (最后一个参数是页码)</p>
+</li>
+<li><p>设置b站cookie b_ut&#x3D;7;buvid3&#x3D;0;i-wanna-go-back&#x3D;-1;innersign&#x3D;0; (最好把cookie设全)</p>
+<p>获取Cookie可以使用<a target="_blank" rel="noopener" href="https://github.com/XiaoMiku01/login_bili_go">这个工具</a></p>
+</li>
+<li><p>更新vup</p>
+<h3 id="b站动态、专栏、视频、直播解析"><a href="#b站动态、专栏、视频、直播解析" class="headerlink" title="b站动态、专栏、视频、直播解析"></a>b站动态、专栏、视频、直播解析</h3><p>&#96;&#96;</p>
+</li>
+<li><p>t.bilibili.com&#x2F;642277677329285174 | bilibili.com&#x2F;read&#x2F;cv17134450 | bilibili.com&#x2F;video&#x2F;BV13B4y1x7pS | live.bilibili.com&#x2F;22603245</p>
+<h3 id="b站动态、直播推送-需要配合job一起使用"><a href="#b站动态、直播推送-需要配合job一起使用" class="headerlink" title="b站动态、直播推送,需要配合job一起使用"></a>b站动态、直播推送,需要配合job一起使用</h3></li>
+<li><p>添加b站订阅[uid|name]</p>
+</li>
+<li><p>取消b站订阅[uid|name]</p>
+</li>
+<li><p>取消b站动态订阅[uid|name]</p>
+</li>
+<li><p>取消b站直播订阅[uid|name]</p>
+</li>
+<li><p>b站推送列表</p>
+</li>
+<li><p>拉取b站推送 (使用job执行定时任务——记录在”@every 5m”触发的指令)</p>
+<h3 id="书评"><a href="#书评" class="headerlink" title="书评"></a>书评</h3><h3 id="书评-xxx"><a href="#书评-xxx" class="headerlink" title="书评[xxx]"></a>书评[xxx]</h3></li>
+<li><p>随机书评</p>
+<h3 id="选择困难症帮手"><a href="#选择困难症帮手" class="headerlink" title="选择困难症帮手"></a>选择困难症帮手</h3></li>
+<li><p>选择[选择项1]还是[选项2]还是[更多选项]</p>
+<h3 id="抽象话"><a href="#抽象话" class="headerlink" title="抽象话"></a>抽象话</h3><p>&#96;&#96;</p>
+</li>
+<li><p>抽象翻译[xxx]</p>
+<h3 id="英文字符翻转"><a href="#英文字符翻转" class="headerlink" title="英文字符翻转"></a>英文字符翻转</h3><p>&#96;&#96;</p>
+</li>
+<li><p>翻转 I love you</p>
+<h3 id="coser"><a href="#coser" class="headerlink" title="coser"></a>coser</h3></li>
+<li><p>coser</p>
+<h3 id="cp短打"><a href="#cp短打" class="headerlink" title="cp短打"></a>cp短打</h3></li>
+<li><p>组cp[@xxx][@xxx]</p>
+</li>
+<li><p>磕cp大老师 雪乃</p>
+<h3 id="今日早报"><a href="#今日早报" class="headerlink" title="今日早报"></a>今日早报</h3><p>&#96;&#96;</p>
+</li>
+<li><p>今日早报</p>
+<h3 id="DeepDanbooru二次元图标签识别"><a href="#DeepDanbooru二次元图标签识别" class="headerlink" title="DeepDanbooru二次元图标签识别"></a>DeepDanbooru二次元图标签识别</h3></li>
+<li><p>鉴赏图片[图片]</p>
+<h3 id="嘉然"><a href="#嘉然" class="headerlink" title="嘉然"></a>嘉然</h3><p> 小作文</p>
+</li>
+<li><p>发大病</p>
+</li>
+<li><p>教你一篇小作文[作文]</p>
+<h3 id="程序员做饭指南"><a href="#程序员做饭指南" class="headerlink" title="程序员做饭指南"></a>程序员做饭指南</h3><p>&#96;&#96;</p>
+</li>
+<li><p>怎么做 | 烹饪[菜名]</p>
+</li>
+<li><p>随机菜谱 | 随便做点菜</p>
+<h3 id="多功能抽签"><a href="#多功能抽签" class="headerlink" title="多功能抽签"></a>多功能抽签</h3><p>支持图包文件夹和gif抽签</p>
+</li>
+<li><p>(刷新)抽签列表</p>
+</li>
+<li><p>抽[签名]签</p>
+</li>
+<li><p>看签[gif签名]</p>
+</li>
+<li><p>加签[签名][gif图片]</p>
+</li>
+<li><p>删签[gif签名]</p>
+<h3 id="漂流瓶"><a href="#漂流瓶" class="headerlink" title="漂流瓶"></a>漂流瓶</h3></li>
+<li><p>@Bot pick (随机捞一个漂流瓶)</p>
+</li>
+<li><p>@Bot throw xxx (投递内容xxx,支持图片文字,投递内容需要大于10个字符或者带有图片)</p>
+<h3 id="合成emoji"><a href="#合成emoji" class="headerlink" title="合成emoji"></a>合成emoji</h3></li>
+<li><p>[emoji][emoji]</p>
+<h3 id="好友申请及群聊邀请事件处理"><a href="#好友申请及群聊邀请事件处理" class="headerlink" title="好友申请及群聊邀请事件处理"></a>好友申请及群聊邀请事件处理</h3><p>&#96;&#96;</p>
+</li>
+<li><p>[开启|关闭]自动同意[申请|邀请|主人]</p>
+</li>
+<li><p>[同意|拒绝][申请|邀请][flag]</p>
+<ul>
+<li>flag跟随事件一起发送, 默认同意主人的事件</li>
+</ul>
+<h3 id="渲染任意文字到图片"><a href="#渲染任意文字到图片" class="headerlink" title="渲染任意文字到图片"></a>渲染任意文字到图片</h3></li>
+<li><p>(用[终末体|终末变体|紫罗兰体|樱酥体|Consolas体|粗苹方体|未来荧黑体|Gugi体|八丸体|Impact体|猫啃体|苹方体])渲染(抖动)文字xxx</p>
+<h3 id="每日运势"><a href="#每日运势" class="headerlink" title="每日运势"></a>每日运势</h3></li>
+<li><p>运势 | 抽签</p>
+</li>
+<li><p>设置底图[车万 DC4 爱因斯坦 星空列车 樱云之恋 富婆妹 李清歌 公主连结 原神 明日方舟 碧蓝航线 碧蓝幻想 战双 阴阳师 赛马娘 东方归言录 奇异恩典 夏日口袋 ASoul Hololive]</p>
+<h3 id="笑话"><a href="#笑话" class="headerlink" title="笑话"></a>笑话</h3></li>
+<li><p>讲个笑话[@xxx|qq号|人名] | 夸夸[@xxx|qq号|人名]</p>
+<h3 id="原神抽卡"><a href="#原神抽卡" class="headerlink" title="原神抽卡"></a>原神抽卡</h3></li>
+<li><p>切换原神卡池</p>
+</li>
+<li><p>原神十连</p>
+<h3 id="gif"><a href="#gif" class="headerlink" title="gif"></a>gif</h3></li>
+<li><p>爬</p>
+</li>
+<li><p>冲</p>
+</li>
+<li><p>摸</p>
+</li>
+<li><p>搓</p>
+</li>
+<li><p>拍</p>
+</li>
+<li><p>丢</p>
+</li>
+<li><p>敲</p>
+</li>
+<li><p>吃</p>
+</li>
+<li><p>啃</p>
+</li>
+<li><p>撕</p>
+</li>
+<li><p>蹭</p>
+</li>
+<li><p>灰度</p>
+</li>
+<li><p>上翻</p>
+</li>
+<li><p>下翻</p>
+</li>
+<li><p>左翻</p>
+</li>
+<li><p>右翻</p>
+</li>
+<li><p>反色</p>
+</li>
+<li><p>倒放</p>
+</li>
+<li><p>浮雕</p>
+</li>
+<li><p>打码</p>
+</li>
+<li><p>负片</p>
+<h3 id="GitHub仓库搜索"><a href="#GitHub仓库搜索" class="headerlink" title="GitHub仓库搜索"></a>GitHub仓库搜索</h3><p>&#96;&#96;</p>
+</li>
+<li><blockquote>
+<p>github [xxx]</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>github -p [xxx]</p>
+</blockquote>
+<h3 id="猜歌"><a href="#猜歌" class="headerlink" title="猜歌"></a>猜歌</h3><p>&#96;&#96;</p>
+<p>猜歌插件（该插件依赖ffmpeg）</p>
+<p>———主 人 指 令———</p>
+</li>
+<li><p>设置猜歌歌库路径 [绝对路径]</p>
+</li>
+<li><p>[创建&#x2F;删除]歌单 [歌单名称]</p>
+</li>
+<li><p>下载歌曲[歌曲名称&#x2F;网易云歌曲ID]到[歌单名称]</p>
+<p>——-管 理 员 指 令——–</p>
+</li>
+<li><p>设置猜歌默认歌单 [歌单名称]</p>
+</li>
+<li><p>上传歌曲[群文件的音乐名]到[歌单名称]</p>
+<p>——公 用 指 令——</p>
+</li>
+<li><p>歌单列表</p>
+</li>
+<li><p>[个人&#x2F;团队]猜歌</p>
+<p>——插 件 扩 展——</p>
+<ul>
+<li>本插件内置了<a target="_blank" rel="noopener" href="https://binaryify.github.io/NeteaseCloudMusicApi/#/">NeteaseCloudMusicApi</a>框架的一些功能</li>
+</ul>
+</li>
+<li><p>设置猜歌API帮助</p>
+</li>
+<li><p>设置猜歌API [API首页网址]</p>
+</li>
+<li><p>猜歌[开启&#x2F;关闭][歌单&#x2F;歌词]自动下载</p>
+<ul>
+<li>登录网易云</li>
+</ul>
+</li>
+<li><p>歌单信息 [网易云歌单链接&#x2F;ID]</p>
+</li>
+<li><p>[歌单名称]绑定网易云[网易云歌单链接&#x2F;ID]</p>
+</li>
+<li><p>下载歌单[网易云歌单链接&#x2F;ID]到[歌单名称]</p>
+</li>
+<li><p>解除绑定 [歌单名称]</p>
+<h3 id="一言"><a href="#一言" class="headerlink" title="一言"></a>一言</h3></li>
+<li><p>一言[xxx]</p>
+</li>
+<li><p>系列一言</p>
+<h3 id="炉石"><a href="#炉石" class="headerlink" title="炉石"></a>炉石</h3></li>
+<li><p>搜卡[xxxx]</p>
+</li>
+<li><p>[卡组代码xxx]</p>
+<ul>
+<li>注：更多搜卡指令参数：<a target="_blank" rel="noopener" href="https://hs.fbigame.com/misc/searchhelp">https://hs.fbigame.com/misc/searchhelp</a></li>
+</ul>
+<h3 id="百人一首"><a href="#百人一首" class="headerlink" title="百人一首"></a>百人一首</h3></li>
+<li><p>百人一首</p>
+</li>
+<li><p>百人一首之n</p>
+<h3 id="注入指令"><a href="#注入指令" class="headerlink" title="注入指令"></a>注入指令</h3></li>
+<li><p>run[CQ码]</p>
+<h3 id="煎蛋网无聊图"><a href="#煎蛋网无聊图" class="headerlink" title="煎蛋网无聊图"></a>煎蛋网无聊图</h3><p>&#96;&#96;</p>
+</li>
+<li><p>来份[屌|弔|吊]图</p>
+</li>
+<li><p>更新[屌|弔|吊]图</p>
+<h3 id="日语听力学习材料"><a href="#日语听力学习材料" class="headerlink" title="日语听力学习材料"></a>日语听力学习材料</h3></li>
+<li><p>随机日语听力</p>
+</li>
+<li><p>随机日语歌曲</p>
+</li>
+<li><p>日语听力 xxx</p>
+</li>
+<li><p>日语歌曲 xxx</p>
+<h3 id="疯狂星期四"><a href="#疯狂星期四" class="headerlink" title="疯狂星期四"></a>疯狂星期四</h3></li>
+<li><p>疯狂星期四</p>
+<h3 id="kokomi原神面板"><a href="#kokomi原神面板" class="headerlink" title="kokomi原神面板"></a>kokomi原神面板</h3><p>&#96;&#96;</p>
+</li>
+<li><p>kokomi菜单</p>
+</li>
+<li><p>XX面板</p>
+<ul>
+<li>注:本插件未并入主仓库,需自行安装(须源码方式运行才能添加插件),安装地址<a target="_blank" rel="noopener" href="https://github.com/lianhong2758/kokomi-plugin">kokomi-原神面板查询插件</a></li>
+</ul>
+<h3 id="lolicon"><a href="#lolicon" class="headerlink" title="lolicon"></a>lolicon</h3></li>
+<li><p>随机图片</p>
+</li>
+<li><p>随机图片 萝莉|少女</p>
+</li>
+<li><p>设置随机图片地址[http…]</p>
+<ul>
+<li><p>每一小时发一张图</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">记录在&quot;@every 1h&quot;触发的指令</span><br><span class="line">来份萝莉</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="桑帛云-API"><a href="#桑帛云-API" class="headerlink" title="桑帛云 API"></a>桑帛云 API</h3><p>&#96;&#96;</p>
+</li>
+<li><p>随机妹子</p>
+</li>
+<li><p>随机绕口令</p>
+</li>
+<li><p>颜值鉴定[图片]</p>
+</li>
+<li><p>随机情话</p>
+</li>
+<li><p>发病 嘉然</p>
+</li>
+<li><p>让[嘉然|塔菲|东雪莲|懒羊羊|科比|孙笑川|陈泽|丁真|空|荧|派蒙|纳西妲|阿贝多|温迪|枫原万叶|钟离|荒泷一斗|八重神子|艾尔海森|提纳里|迪希雅|卡维|宵宫|莱依拉|赛诺|诺艾尔|托马|凝光|莫娜|北斗|神里绫华|雷电将军|芭芭拉|鹿野院平藏|五郎|迪奥娜|凯亚|安柏|班尼特|琴|柯莱|夜兰|妮露|辛焱|珐露珊|魈|香菱|达达利亚|砂糖|早柚|云堇|刻晴|丽莎|迪卢克|烟绯|重云|珊瑚宫心海|胡桃|可莉|流浪者|久岐忍|神里绫人|甘雨|戴因斯雷布|优菈|菲谢尔|行秋|白术|九条裟罗|雷泽|申鹤|迪娜泽黛|凯瑟琳|多莉|坎蒂丝|萍姥姥|罗莎莉亚|留云借风真君|绮良良|瑶瑶|七七|奥兹|米卡|夏洛蒂|埃洛伊|博士|女士|大慈树王|三月七|娜塔莎|希露瓦|虎克|克拉拉|丹恒|希儿|布洛妮娅|瓦尔特|杰帕德|佩拉|姬子|艾丝妲|白露|星|穹|桑博|伦纳德|停云|罗刹|卡芙卡|彦卿|史瓦罗|螺丝咕姆|阿兰|银狼|素裳|丹枢|黑塔|景元|帕姆|可可利亚|半夏|符玄|公输师傅|奥列格|青雀|大毫|青镞|费斯曼|绿芙蓉|镜流|信使|丽塔|失落迷迭|缭乱星棘|伊甸|伏特加女孩|狂热蓝调|莉莉娅|萝莎莉娅|八重樱|八重霞|卡莲|第六夜想曲|卡萝尔|姬子|极地战刃|布洛妮娅|次生银翼|理之律者|真理之律者|迷城骇兔|希儿|魇夜星渊|黑希儿|帕朵菲莉丝|天元骑英|幽兰黛尔|德丽莎|月下初拥|朔夜观星|暮光骑士|明日香|李素裳|格蕾修|梅比乌斯|渡鸦|人之律者|爱莉希雅|爱衣|天穹游侠|琪亚娜|空之律者|终焉之律者|薪炎之律者|云墨丹心|符华|识之律者|维尔薇|始源之律者|芽衣|雷之律者|苏莎娜|阿波尼亚|陆景和|莫弈|夏彦|左然]说我测尼玛</p>
+<h3 id="MagicPrompt-Stable-Diffusion吟唱提示"><a href="#MagicPrompt-Stable-Diffusion吟唱提示" class="headerlink" title="MagicPrompt-Stable-Diffusion吟唱提示"></a>MagicPrompt-Stable-Diffusion吟唱提示</h3></li>
+<li><p>吟唱提示[xxxx]</p>
+<h3 id="钓鱼模拟器"><a href="#钓鱼模拟器" class="headerlink" title="钓鱼模拟器"></a>钓鱼模拟器</h3><p>&#96;&#96;</p>
+</li>
+<li><p>钓鱼商店</p>
+</li>
+<li><p>购买xxx [数量]</p>
+</li>
+<li><p>出售[xxx [数量]|所有垃圾]</p>
+</li>
+<li><p>钓鱼背包</p>
+</li>
+<li><p>装备[xx竿|三叉戟|美西螈]</p>
+</li>
+<li><p>附魔[诱钓|海之眷顾]</p>
+</li>
+<li><p>修复鱼竿</p>
+</li>
+<li><p>合成[xx竿|三叉戟]</p>
+</li>
+<li><p>进行钓鱼</p>
+</li>
+<li><p>进行n次钓鱼</p>
+<h3 id="简易midi音乐制作"><a href="#简易midi音乐制作" class="headerlink" title="简易midi音乐制作"></a>简易midi音乐制作</h3></li>
+<li><p>midi制作 CCGGAAGR FFEEDDCR GGFFEEDR GGFFEEDR CCGGAAGR FFEEDDCR</p>
+</li>
+<li><p>个人听音练习</p>
+</li>
+<li><p>团队听音练习</p>
+</li>
+<li><p>*.mid (midi 转 txt)</p>
+</li>
+<li><p>midi制作*.txt (txt 转 midi)</p>
+</li>
+<li><p>设置音色40 (0~127)</p>
+</li>
+<li><p>注: 该插件需要安装timidity, linux安装脚本可参考 <a target="_blank" rel="noopener" href="https://gitcode.net/anto_july/midi/-/raw/master/timidity.sh">https://gitcode.net/anto_july/midi/-/raw/master/timidity.sh</a>, windows安装脚本可参考 <a target="_blank" rel="noopener" href="https://gitcode.net/anto_july/midi/-/raw/master/timidity.bat?inline=false">https://gitcode.net/anto_july/midi/-/raw/master/timidity.bat?inline=false</a>, windows需要管理员模式运行</p>
+</li>
+<li><p>符号说明: C5是中央C,后面不写数字,默认接5,Cb6&lt;1,b代表降调,#代表升调,6比5高八度,&lt;1代表音长×2,&lt;3代表音长×8,&lt;-1代表音长×0.5,&lt;-3代表音长×0.125,R是休止符</p>
+<h3 id="日韩-VITS-模型拟声"><a href="#日韩-VITS-模型拟声" class="headerlink" title="日韩 VITS 模型拟声"></a>日韩 VITS 模型拟声</h3></li>
+<li><p>让[派蒙|空|荧|阿贝多|枫原万叶|温迪|八重神子|纳西妲|钟离|诺艾尔|凝光|托马|北斗|莫娜|荒泷一斗|提纳里|芭芭拉|艾尔海森|雷电将军|赛诺|琴|班尼特|五郎|神里绫华|迪希雅|夜兰|辛焱|安柏|宵宫|云堇|妮露|烟绯|鹿野院平藏|凯亚|达达利亚|迪卢克|可莉|早柚|香菱|重云|刻晴|久岐忍|珊瑚宫心海|迪奥娜|戴因斯雷布|魈|神里绫人|丽莎|优菈|凯瑟琳|雷泽|菲谢尔|九条裟罗|甘雨|行秋|胡桃|迪娜泽黛|柯莱|申鹤|砂糖|萍姥姥|奥兹|罗莎莉亚|式大将|哲平|坎蒂丝|托克|留云借风真君|昆钧|塞琉斯|多莉|大肉丸|莱依拉|散兵|拉赫曼|杜拉夫|阿守|玛乔丽|纳比尔|海芭夏|九条镰治|阿娜耶|阿晃|阿扎尔|七七|博士|白术|埃洛伊|大慈树王|女士|丽塔|失落迷迭|缭乱星棘|伊甸|伏特加女孩|狂热蓝调|莉莉娅|萝莎莉娅|八重樱|八重霞|卡莲|第六夜想曲|卡萝尔|姬子|极地战刃|布洛妮娅|次生银翼|理之律者|迷城骇兔|希儿|魇夜星渊|黑希儿|帕朵菲莉丝|天元骑英|幽兰黛尔|德丽莎|月下初拥|朔夜观星|暮光骑士|明日香|李素裳|格蕾修|梅比乌斯|渡鸦|人之律者|爱莉希雅|爱衣|天穹游侠|琪亚娜|空之律者|薪炎之律者|云墨丹心|符华|识之律者|维尔薇|芽衣|雷之律者|阿波尼亚]说(中文)</p>
+<h3 id="摸鱼"><a href="#摸鱼" class="headerlink" title="摸鱼"></a>摸鱼</h3></li>
+<li><p>&#x2F;启用 moyu</p>
+</li>
+<li><p>&#x2F;禁用 moyu</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">记录在&quot;0 10 * * *&quot;触发的指令</span><br><span class="line">摸鱼提醒</span><br></pre></td></tr></table></figure>
+
+<h3 id="摸鱼人日历"><a href="#摸鱼人日历" class="headerlink" title="摸鱼人日历"></a>摸鱼人日历</h3><ul>
+<li>&#x2F;启用 moyucalendar</li>
+<li>&#x2F;禁用 moyucalendar</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">记录在&quot;30 8 * * *&quot;触发的指令</span><br><span class="line">摸鱼人日历</span><br></pre></td></tr></table></figure>
+
+<h3 id="点歌"><a href="#点歌" class="headerlink" title="点歌"></a>点歌</h3><ul>
+<li><p>点歌[xxx]</p>
+</li>
+<li><p>网易点歌[xxx]</p>
+</li>
+<li><p>酷我点歌[xxx]</p>
+</li>
+<li><p>酷狗点歌[xxx]</p>
+<h3 id="本地涩图"><a href="#本地涩图" class="headerlink" title="本地涩图"></a>本地涩图</h3></li>
+<li><p>本地[xxx]</p>
+</li>
+<li><p>刷新本地[xxx]</p>
+</li>
+<li><p>设置本地setu绝对路径[xxx]</p>
+</li>
+<li><p>刷新所有本地setu</p>
+</li>
+<li><p>所有本地setu分类</p>
+<ul>
+<li>注：刷新文件夹较慢，请耐心等待刷新完成，会提示“成功”。</li>
+</ul>
+<h3 id="抽wife"><a href="#抽wife" class="headerlink" title="抽wife"></a>抽wife</h3></li>
+<li><p>抽wife[@xxx]</p>
+</li>
+<li><p>添加wife[名字][图片]</p>
+</li>
+<li><p>删除wife[名字]</p>
+</li>
+<li><p>[让 | 不让]所有人均可添加wife</p>
+<ul>
+<li>注：不同群添加后不会重叠</li>
+</ul>
+<h3 id="拼音首字母释义工具"><a href="#拼音首字母释义工具" class="headerlink" title="拼音首字母释义工具"></a>拼音首字母释义工具</h3></li>
+<li><p>?? [缩写]</p>
+<h3 id="日语语法学习"><a href="#日语语法学习" class="headerlink" title="日语语法学习"></a>日语语法学习</h3><p>&#96;&#96;</p>
+</li>
+<li><p>日语语法 [xxx] (使用tag随机)</p>
+</li>
+<li><p>搜索日语语法 [xxx]</p>
+<h3 id="小说"><a href="#小说" class="headerlink" title="小说"></a>小说</h3><p> 小说[xxx]</p>
+<ul>
+<li>设置小说配置 zerobot 123456</li>
+<li>下载小说30298</li>
+<li>注: 建议去<a target="_blank" rel="noopener" href="https://www.23qb.com/">https://www.23qb.com/</a> 注册一个账号, 小说下载有积分限制</li>
+</ul>
+<h3 id="nsfw图片识别"><a href="#nsfw图片识别" class="headerlink" title="nsfw图片识别"></a>nsfw图片识别</h3></li>
+<li><p>nsfw打分[图片]</p>
+</li>
+<li><p>当图片属于非 neutral 类别时自动发送评价(默认禁用，启用输入 &#x2F;启用 nsfwauto)</p>
+<h3 id="浅草寺求签"><a href="#浅草寺求签" class="headerlink" title="浅草寺求签"></a>浅草寺求签</h3></li>
+<li><p>求签 | 占卜</p>
+</li>
+<li><p>解签</p>
+<h3 id="抽扑克"><a href="#抽扑克" class="headerlink" title="抽扑克"></a>抽扑克</h3></li>
+<li><p>抽扑克牌</p>
+<h3 id="一群一天一夫一妻制群老婆"><a href="#一群一天一夫一妻制群老婆" class="headerlink" title="一群一天一夫一妻制群老婆"></a>一群一天一夫一妻制群老婆</h3><ul>
+<li>引入好感度系统，好感度越高，自由恋爱成功率越高</li>
+</ul>
+</li>
+<li><p>设置CD为xx小时</p>
+</li>
+<li><p>[允许|禁止]自由恋爱</p>
+</li>
+<li><p>[允许|禁止]牛头人</p>
+</li>
+<li><p>娶群友</p>
+</li>
+<li><p>[娶|嫁][@对方QQ]</p>
+</li>
+<li><p>当[对方Q号|@对方QQ]的小三</p>
+</li>
+<li><p>做媒 @攻方QQ @受方QQ</p>
+</li>
+<li><p>买礼物给[对方Q号|@对方QQ]</p>
+</li>
+<li><p>群老婆列表</p>
+</li>
+<li><p>查好感度[对方Q号|@对方QQ]</p>
+</li>
+<li><p>好感度列表</p>
+</li>
+<li><p>重置花名册</p>
+<h3 id="qq空间表白墙"><a href="#qq空间表白墙" class="headerlink" title="qq空间表白墙"></a>qq空间表白墙</h3><p>&#96;&#96;</p>
+</li>
+<li><p>登录QQ空间 (Cookie过期很快, 要经常登录)</p>
+</li>
+<li><p>发说说[xxx]</p>
+</li>
+<li><p>(匿名)发表白墙[xxx]</p>
+</li>
+<li><p>[ 同意 | 拒绝 ]表白墙 1,2,3 (最后一个参数是表白墙的序号数组, 用英文逗号连接)</p>
+</li>
+<li><p>查看[ 等待 | 同意 | 拒绝 | 所有 ]表白墙 0 (最后一个参数是页码, 建议私聊审稿)</p>
+<h3 id="Real-CUGAN清晰术"><a href="#Real-CUGAN清晰术" class="headerlink" title="Real-CUGAN清晰术"></a>Real-CUGAN清晰术</h3></li>
+<li><p>清晰术(双重吟唱|三重吟唱|四重吟唱)(强力术式|中等术式|弱术式|不变式|原式)[图片]</p>
+<h3 id="投胎"><a href="#投胎" class="headerlink" title="投胎"></a>投胎</h3></li>
+<li><p>reborn</p>
+<ul>
+<li>注：本插件来源于<a target="_blank" rel="noopener" href="https://github.com/YukariChiba/tgbot/blob/main/modules/Reborn.py">tgbot</a></li>
+</ul>
+<h3 id="打劫"><a href="#打劫" class="headerlink" title="打劫"></a>打劫</h3></li>
+</ul>
+<p> 打劫[对方Q号|@对方QQ]</p>
+<h3 id="在线代码运行"><a href="#在线代码运行" class="headerlink" title="在线代码运行"></a>在线代码运行</h3><blockquote>
+<p>runcode [language] help</p>
+</blockquote>
+<p>- </p>
+<blockquote>
+<p>runcode [language] [code block]</p>
+</blockquote>
+<p>- </p>
+<blockquote>
+<p>runcoderaw [language] [code block]</p>
+</blockquote>
+<h3 id="搜图"><a href="#搜图" class="headerlink" title="搜图"></a>搜图</h3><ul>
+<li><p>以图搜图 | 搜索图片 | 以图识图[图片]</p>
+</li>
+<li><p>搜图[P站图片ID]</p>
+</li>
+<li><p>设置 saucenao api key [apikey]</p>
+<h3 id="签到得分"><a href="#签到得分" class="headerlink" title="签到得分"></a>签到得分</h3></li>
+</ul>
+<p>​       签到</p>
+<ul>
+<li><p>获得签到背景[@xxx] | 获得签到背景</p>
+</li>
+<li><p>设置签到预设(0~3)</p>
+</li>
+<li><p>查看等级排名</p>
+<ul>
+<li>注:跨群排行</li>
+</ul>
+</li>
+<li><p>查看我的钱包</p>
+</li>
+<li><p>查看钱包排名</p>
+<ul>
+<li>注:本群排行，若群人数太多不建议使用该功能!!!</li>
+</ul>
+<h3 id="沙雕app"><a href="#沙雕app" class="headerlink" title="沙雕app"></a>沙雕app</h3></li>
+<li><p>哄我</p>
+</li>
+<li><p>渣我</p>
+</li>
+<li><p>来碗绿茶</p>
+</li>
+<li><p>发个朋友圈</p>
+</li>
+<li><p>来碗毒鸡汤</p>
+</li>
+<li><p>讲个段子</p>
+</li>
+<li><p>马丁路德骂我</p>
+<h3 id="shindan"><a href="#shindan" class="headerlink" title="shindan"></a>shindan</h3></li>
+<li><p>今天是什么少女[@xxx]</p>
+</li>
+<li><p>异世界转生[@xxx]</p>
+</li>
+<li><p>卖萌[@xxx]</p>
+</li>
+<li><p>今日老婆[@xxx]</p>
+</li>
+<li><p>黄油角色[@xxx]</p>
+<h3 id="steam"><a href="#steam" class="headerlink" title="steam"></a>steam</h3></li>
+<li><p>steam[添加|删除]订阅xxxxx</p>
+</li>
+<li><p>steam查询订阅</p>
+</li>
+<li><p>steam绑定 api key xxxxxxx</p>
+</li>
+<li><p>查看apikey</p>
+</li>
+<li><p>拉取steam订阅 (使用job执行定时任务——记录在”@every 1m”触发的指令)</p>
+<h3 id="抽塔罗牌"><a href="#抽塔罗牌" class="headerlink" title="抽塔罗牌"></a>抽塔罗牌</h3><h3 id="抽-塔罗牌-大阿卡纳-小阿卡纳"><a href="#抽-塔罗牌-大阿卡纳-小阿卡纳" class="headerlink" title="抽[塔罗牌|大阿卡纳|小阿卡纳]"></a>抽[塔罗牌|大阿卡纳|小阿卡纳]</h3></li>
+<li><p>抽n张[塔罗牌|大阿卡纳|小阿卡纳]</p>
+</li>
+<li><p>解塔罗牌[牌名]</p>
+</li>
+<li><p>[塔罗|大阿卡纳|小阿卡纳|混合]牌阵[圣三角|时间之流|四要素|五牌阵|吉普赛十字|马蹄|六芒星]</p>
+<h3 id="舔狗日记"><a href="#舔狗日记" class="headerlink" title="舔狗日记"></a>舔狗日记</h3><p> 舔狗日记</p>
+<h3 id="搜番"><a href="#搜番" class="headerlink" title="搜番"></a>搜番</h3></li>
+<li><p>搜番 | 搜索番剧[图片]</p>
+<h3 id="翻译"><a href="#翻译" class="headerlink" title="翻译"></a>翻译</h3></li>
+<li><blockquote>
+<p>TL 你好</p>
+</blockquote>
+<h3 id="vits猫雷"><a href="#vits猫雷" class="headerlink" title="vits猫雷"></a>vits猫雷</h3></li>
+<li><p>让猫雷说[xxxx]</p>
+<h3 id="vtb语录"><a href="#vtb语录" class="headerlink" title="vtb语录"></a>vtb语录</h3></li>
+<li><p>vtb语录</p>
+</li>
+<li><p>随机vtb</p>
+</li>
+<li><p>更新vtb</p>
+<h3 id="钱包"><a href="#钱包" class="headerlink" title="钱包"></a>钱包</h3></li>
+<li><p>查看我的钱包</p>
+</li>
+<li><p>查看钱包排名</p>
+<h3 id="据意查句"><a href="#据意查句" class="headerlink" title="据意查句"></a>据意查句</h3></li>
+<li><p>据意查句 大海</p>
+</li>
+<li><p>登录据意查句</p>
+<h3 id="星际战甲"><a href="#星际战甲" class="headerlink" title="星际战甲"></a>星际战甲</h3></li>
+<li><p>wf时间同步</p>
+</li>
+<li><p>[金星|地球|火卫二]平原状态</p>
+</li>
+<li><p>.wm [物品名称]</p>
+</li>
+<li><p>仲裁</p>
+</li>
+<li><p>警报</p>
+</li>
+<li><p>每日特惠</p>
+<h3 id="百度文心AI"><a href="#百度文心AI" class="headerlink" title="百度文心AI"></a>百度文心AI</h3><p>基于百度文心API的一些功能</p>
+<p>key申请链接：<a target="_blank" rel="noopener" href="https://wenxin.baidu.com/moduleApi/key">https://wenxin.baidu.com/moduleApi/key</a></p>
+</li>
+<li><p>为[自己&#x2F;本群&#x2F;QQ号&#x2F;群+群号]设置文心key [API Key] [Secret Key]</p>
+</li>
+<li><p>为[自己&#x2F;本群&#x2F;QQ号&#x2F;群+群号]设置画图key [API Key] [Secret Key]</p>
+<p>例：“为10086设置画图key 123 456”；“为群10010设置画图key 789 101”</p>
+<p>文心key和画图key的API key 可以是相同的，只是文心key日限为200，画图日限为50，以此作区别。</p>
+</li>
+<li><p>文心作文 (x字的)[作文题目]</p>
+</li>
+<li><p>文心提案 (x字的)[文案标题]</p>
+</li>
+<li><p>文心摘要 (x字的)[文章内容]</p>
+</li>
+<li><p>文心小说 (x字的)[小说上文]</p>
+</li>
+<li><p>文心对联 [上联]</p>
+</li>
+<li><p>文心问答 [问题]</p>
+</li>
+<li><p>文心补全 [带“_”的填空题]</p>
+</li>
+<li><p>文心自定义 [prompt]</p>
+</li>
+<li><p>[bot名称]画几张[图片描述]的[图片类型][图片尺寸]</p>
+<p>指令示例：</p>
+<ul>
+<li>文心作文 我的椛椛机器人</li>
+<li>文心作文 300字的我的椛椛机器人</li>
+<li>花花帮我画几张金凤凰，背景绚烂，高饱和，古风，仙境，高清，4K，古风的油画方图</li>
+</ul>
+<h3 id="抽老婆"><a href="#抽老婆" class="headerlink" title="抽老婆"></a>抽老婆</h3></li>
+<li><p>抽老婆</p>
+<h3 id="聊天热词"><a href="#聊天热词" class="headerlink" title="聊天热词"></a>聊天热词</h3></li>
+<li><p>热词 [群号] [消息数目]|热词 123456 1000</p>
+<h3 id="猜单词"><a href="#猜单词" class="headerlink" title="猜单词"></a>猜单词</h3></li>
+<li><p>个人猜单词</p>
+</li>
+<li><p>团队猜单词</p>
+</li>
+<li><p>团队六阶猜单词</p>
+</li>
+<li><p>团队七阶猜单词</p>
+<h3 id="鬼东西"><a href="#鬼东西" class="headerlink" title="鬼东西"></a>鬼东西</h3></li>
+<li><p>鬼东西列表</p>
+</li>
+<li><p>查询鬼东西[序号][@xxx]</p>
+<ul>
+<li>注：由于需要科学，默认注释。</li>
+</ul>
+<h3 id="一些游戏王插件"><a href="#一些游戏王插件" class="headerlink" title="一些游戏王插件"></a>一些游戏王插件</h3></li>
+<li><p>&#x2F;ydp [xxx]</p>
+</li>
+<li><p>&#x2F;yds [xxx]</p>
+</li>
+<li><p>&#x2F;ydb [xxx]</p>
+<ul>
+<li><p>注：[xxx]为搜索内容;p:返回一张图片;s:返回一张效果描述;b:高级搜索</p>
+<h5 id="集换社卡价查询"><a href="#集换社卡价查询" class="headerlink" title="集换社卡价查询"></a>集换社卡价查询</h5></li>
+</ul>
+</li>
+<li><p>查卡价 [卡名]</p>
+</li>
+<li><p>查卡价 [卡名] -r [稀有度 稀有度 …]</p>
+</li>
+<li><p>查卡店 [卡名]</p>
+</li>
+<li><p>查卡店 [卡名] -r [稀有度]</p>
+<ul>
+<li>注：卡店只支持单个稀有度查询</li>
+</ul>
+<h3 id="月幕galgame图"><a href="#月幕galgame图" class="headerlink" title="月幕galgame图"></a>月幕galgame图</h3></li>
+<li><p>随机galCG</p>
+</li>
+<li><p>随机gal表情包</p>
+</li>
+<li><p>galCG[xxx]</p>
+</li>
+<li><p>gal表情包[xxx]</p>
+</li>
+<li><p>更新gal</p>
+<h3 id="遇见API"><a href="#遇见API" class="headerlink" title="遇见API"></a>遇见API</h3></li>
+<li><p>小姐姐视频</p>
+</li>
+<li><p>小姐姐视频2</p>
+</li>
+<li><p>黑丝视频</p>
+</li>
+<li><p>白丝视频</p>
+</li>
+<li><p>欲梦视频</p>
+</li>
+<li><p>甜妹视频</p>
+</li>
+<li><p>双倍快乐</p>
+</li>
+<li><p>纯情女高</p>
+</li>
+<li><p>萝莉视频</p>
+</li>
+<li><p>玉足视频</p>
+</li>
+<li><p>帅哥视频</p>
+</li>
+<li><p>热舞视频</p>
+</li>
+<li><p>吊带视频</p>
+</li>
+<li><p>汉服视频</p>
+</li>
+<li><p>极品狱卒</p>
+</li>
+<li><p>清纯视频</p>
+</li>
+<li><p>快手变装</p>
+</li>
+<li><p>抖音变装</p>
+</li>
+<li><p>萌娃视频</p>
+</li>
+<li><p>穿搭视频</p>
+</li>
+<li><p>完美身材</p>
+</li>
+<li><p>御姐撒娇</p>
+</li>
+<li><p>绿茶语音</p>
+</li>
+<li><p>怼人语音</p>
+</li>
+<li><p>随机骚话</p>
+</li>
+<li><p>随机污句子</p>
+</li>
+<li><p>随机美句</p>
+</li>
+<li><p>土味情话</p>
+</li>
+<li><p>让[lulu]说我测尼玛</p>
+</li>
+</ul>
+<h2 id="低优先级"><a href="#低优先级" class="headerlink" title="低优先级"></a>低优先级</h2><h3 id="人工智能回复"><a href="#人工智能回复" class="headerlink" title="人工智能回复"></a>人工智能回复</h3><h3 id="Bot-任意文本-任意一句话回复"><a href="#Bot-任意文本-任意一句话回复" class="headerlink" title="@Bot 任意文本(任意一句话回复)"></a>@Bot 任意文本(任意一句话回复)</h3><ul>
+<li><p>设置文字回复模式[婧枫|沫沫|青云客|小爱|ChatGPT]</p>
+</li>
+<li><p>设置 ChatGPT api key xxx</p>
+<h3 id="词典匹配回复"><a href="#词典匹配回复" class="headerlink" title="词典匹配回复"></a>词典匹配回复</h3></li>
+<li><p>切换[kimo|傲娇|可爱]词库</p>
+</li>
+<li><p>设置词库触发概率0.x (0&lt;x&lt;9)</p>
+<h3 id="打断复读"><a href="#打断复读" class="headerlink" title="打断复读"></a>打断复读</h3></li>
+<li><p>(打断三次以上的复读)</p>
+</li>
+</ul>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.picgo.net/2024/07/23/IMG_202407235310_638x638ec87315675379510.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.picgo.net/2024/07/23/IMG_202407235310_638x638ec87315675379510.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">Jiang-Mak Yiu</div><div class="post-copyright__author_desc">生活明朗，万物可爱</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="http://example.com/2024/07/29/bot/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('http://example.com/2024/07/29/bot/')">bot</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="https://img.picgo.net/2024/07/23/_20240723211946f67d5b22d7fb333a.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.picgo.net/2024/07/23/_20240723211946f67d5b22d7fb333a.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://img.picgo.net/2024/07/26/_2024070911134861ff5a7df6c8509f.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.picgo.net/2024/07/26/_2024070911134861ff5a7df6c8509f.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="http://example.com/2024/07/29/bot/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=bot&amp;url=http://example.com/2024/07/29/bot/&amp;pic=https://img.picgo.net/2024/07/28/_202407281210271478398c6bfc01dd.md.jpg" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">江江JiangYiu</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/Bot/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>Bot<span class="tagsPageCount">1</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://img.picgo.net/2024/07/28/_202407281210271478398c6bfc01dd.md.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2024/07/28/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E5%85%A8/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.picgo.net/2024/07/28/_202407281210271478398c6bfc01dd.md.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">服务器安全</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.picgo.net/2024/07/23/IMG_202407235310_638x638ec87315675379510.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/08/24/64e6ce9c507bb.png" alt="status"/></div></div><div class="author-info__description"><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">这有关于<b style="color:#fff">产品、设计、开发</b>相关的问题和看法，还有<b style="color:#fff">文章翻译</b>和<b style="color:#fff">分享</b>。</div><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">相信你可以在这里找到对你有用的<b style="color:#fff">知识</b>和<b style="color:#fff">教程</b>。</div></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">Jiang-Mak Yiu</h1><div class="author-info__desc">生活明朗，万物可爱</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/JiangMak-Yiu" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/1766595234" target="_blank" title="BiliBili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a></div></div></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bullhorn anzhiyu-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来看我的博客鸭~</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%8A%E5%A4%A9"><span class="toc-number">1.</span> <span class="toc-text">聊天</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%8A%E5%A4%A9%E6%97%B6%E9%95%BF%E7%BB%9F%E8%AE%A1"><span class="toc-number">2.</span> <span class="toc-text">聊天时长统计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9D%A1%E7%9C%A0%E7%AE%A1%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">睡眠管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ATRI"><span class="toc-number">4.</span> <span class="toc-text">ATRI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BE%A4%E7%AE%A1"><span class="toc-number">5.</span> <span class="toc-text">群管</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E6%97%B6%E6%8C%87%E4%BB%A4%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-number">6.</span> <span class="toc-text">定时指令触发器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AD%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number"></span> <span class="toc-text">中优先级</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ahsai-tts"><span class="toc-number">1.</span> <span class="toc-text">ahsai tts</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AIfalse"><span class="toc-number">2.</span> <span class="toc-text">AIfalse</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AIWife"><span class="toc-number">3.</span> <span class="toc-text">AIWife</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%AF%E4%BB%98%E5%AE%9D%E5%88%B0%E8%B4%A6%E8%AF%AD%E9%9F%B3"><span class="toc-number">4.</span> <span class="toc-text">支付宝到账语音</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A6%E5%8F%91%E8%80%85%E6%92%A4%E5%9B%9E%E6%97%B6%E4%B9%9F%E8%87%AA%E5%8A%A8%E6%92%A4%E5%9B%9E"><span class="toc-number">5.</span> <span class="toc-text">触发者撤回时也自动撤回</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#base16384%E5%8A%A0%E8%A7%A3%E5%AF%86"><span class="toc-number">6.</span> <span class="toc-text">base16384加解密</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E5%AF%86xxx"><span class="toc-number">7.</span> <span class="toc-text">加密xxx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%99%BE%E5%BA%A6%E5%86%85%E5%AE%B9%E5%AE%A1%E6%A0%B8"><span class="toc-number">8.</span> <span class="toc-text">百度内容审核</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#base64%E5%8D%A6%E5%8A%A0%E8%A7%A3%E5%AF%86"><span class="toc-number">9.</span> <span class="toc-text">base64卦加解密</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#base%E5%A4%A9%E5%9F%8E%E6%96%87%E5%8A%A0%E8%A7%A3%E5%AF%86"><span class="toc-number">10.</span> <span class="toc-text">base天城文加解密</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bilibili"><span class="toc-number">11.</span> <span class="toc-text">bilibili</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#b%E7%AB%99%E5%8A%A8%E6%80%81%E3%80%81%E4%B8%93%E6%A0%8F%E3%80%81%E8%A7%86%E9%A2%91%E3%80%81%E7%9B%B4%E6%92%AD%E8%A7%A3%E6%9E%90"><span class="toc-number">12.</span> <span class="toc-text">b站动态、专栏、视频、直播解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#b%E7%AB%99%E5%8A%A8%E6%80%81%E3%80%81%E7%9B%B4%E6%92%AD%E6%8E%A8%E9%80%81-%E9%9C%80%E8%A6%81%E9%85%8D%E5%90%88job%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8"><span class="toc-number">13.</span> <span class="toc-text">b站动态、直播推送,需要配合job一起使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%A6%E8%AF%84"><span class="toc-number">14.</span> <span class="toc-text">书评</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%A6%E8%AF%84-xxx"><span class="toc-number">15.</span> <span class="toc-text">书评[xxx]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%9B%B0%E9%9A%BE%E7%97%87%E5%B8%AE%E6%89%8B"><span class="toc-number">16.</span> <span class="toc-text">选择困难症帮手</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%BD%E8%B1%A1%E8%AF%9D"><span class="toc-number">17.</span> <span class="toc-text">抽象话</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8B%B1%E6%96%87%E5%AD%97%E7%AC%A6%E7%BF%BB%E8%BD%AC"><span class="toc-number">18.</span> <span class="toc-text">英文字符翻转</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#coser"><span class="toc-number">19.</span> <span class="toc-text">coser</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cp%E7%9F%AD%E6%89%93"><span class="toc-number">20.</span> <span class="toc-text">cp短打</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8A%E6%97%A5%E6%97%A9%E6%8A%A5"><span class="toc-number">21.</span> <span class="toc-text">今日早报</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DeepDanbooru%E4%BA%8C%E6%AC%A1%E5%85%83%E5%9B%BE%E6%A0%87%E7%AD%BE%E8%AF%86%E5%88%AB"><span class="toc-number">22.</span> <span class="toc-text">DeepDanbooru二次元图标签识别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%98%89%E7%84%B6"><span class="toc-number">23.</span> <span class="toc-text">嘉然</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E5%91%98%E5%81%9A%E9%A5%AD%E6%8C%87%E5%8D%97"><span class="toc-number">24.</span> <span class="toc-text">程序员做饭指南</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E5%8A%9F%E8%83%BD%E6%8A%BD%E7%AD%BE"><span class="toc-number">25.</span> <span class="toc-text">多功能抽签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BC%82%E6%B5%81%E7%93%B6"><span class="toc-number">26.</span> <span class="toc-text">漂流瓶</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%88%E6%88%90emoji"><span class="toc-number">27.</span> <span class="toc-text">合成emoji</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A5%BD%E5%8F%8B%E7%94%B3%E8%AF%B7%E5%8F%8A%E7%BE%A4%E8%81%8A%E9%82%80%E8%AF%B7%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86"><span class="toc-number">28.</span> <span class="toc-text">好友申请及群聊邀请事件处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%B2%E6%9F%93%E4%BB%BB%E6%84%8F%E6%96%87%E5%AD%97%E5%88%B0%E5%9B%BE%E7%89%87"><span class="toc-number">29.</span> <span class="toc-text">渲染任意文字到图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AF%8F%E6%97%A5%E8%BF%90%E5%8A%BF"><span class="toc-number">30.</span> <span class="toc-text">每日运势</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%91%E8%AF%9D"><span class="toc-number">31.</span> <span class="toc-text">笑话</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%A5%9E%E6%8A%BD%E5%8D%A1"><span class="toc-number">32.</span> <span class="toc-text">原神抽卡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gif"><span class="toc-number">33.</span> <span class="toc-text">gif</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GitHub%E4%BB%93%E5%BA%93%E6%90%9C%E7%B4%A2"><span class="toc-number">34.</span> <span class="toc-text">GitHub仓库搜索</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8C%9C%E6%AD%8C"><span class="toc-number">35.</span> <span class="toc-text">猜歌</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E8%A8%80"><span class="toc-number">36.</span> <span class="toc-text">一言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%82%89%E7%9F%B3"><span class="toc-number">37.</span> <span class="toc-text">炉石</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%99%BE%E4%BA%BA%E4%B8%80%E9%A6%96"><span class="toc-number">38.</span> <span class="toc-text">百人一首</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E5%85%A5%E6%8C%87%E4%BB%A4"><span class="toc-number">39.</span> <span class="toc-text">注入指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%85%8E%E8%9B%8B%E7%BD%91%E6%97%A0%E8%81%8A%E5%9B%BE"><span class="toc-number">40.</span> <span class="toc-text">煎蛋网无聊图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E8%AF%AD%E5%90%AC%E5%8A%9B%E5%AD%A6%E4%B9%A0%E6%9D%90%E6%96%99"><span class="toc-number">41.</span> <span class="toc-text">日语听力学习材料</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%96%AF%E7%8B%82%E6%98%9F%E6%9C%9F%E5%9B%9B"><span class="toc-number">42.</span> <span class="toc-text">疯狂星期四</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#kokomi%E5%8E%9F%E7%A5%9E%E9%9D%A2%E6%9D%BF"><span class="toc-number">43.</span> <span class="toc-text">kokomi原神面板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lolicon"><span class="toc-number">44.</span> <span class="toc-text">lolicon</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%91%E5%B8%9B%E4%BA%91-API"><span class="toc-number">45.</span> <span class="toc-text">桑帛云 API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MagicPrompt-Stable-Diffusion%E5%90%9F%E5%94%B1%E6%8F%90%E7%A4%BA"><span class="toc-number">46.</span> <span class="toc-text">MagicPrompt-Stable-Diffusion吟唱提示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%92%93%E9%B1%BC%E6%A8%A1%E6%8B%9F%E5%99%A8"><span class="toc-number">47.</span> <span class="toc-text">钓鱼模拟器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E6%98%93midi%E9%9F%B3%E4%B9%90%E5%88%B6%E4%BD%9C"><span class="toc-number">48.</span> <span class="toc-text">简易midi音乐制作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E9%9F%A9-VITS-%E6%A8%A1%E5%9E%8B%E6%8B%9F%E5%A3%B0"><span class="toc-number">49.</span> <span class="toc-text">日韩 VITS 模型拟声</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%91%B8%E9%B1%BC"><span class="toc-number">50.</span> <span class="toc-text">摸鱼</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%91%B8%E9%B1%BC%E4%BA%BA%E6%97%A5%E5%8E%86"><span class="toc-number">51.</span> <span class="toc-text">摸鱼人日历</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%82%B9%E6%AD%8C"><span class="toc-number">52.</span> <span class="toc-text">点歌</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E6%B6%A9%E5%9B%BE"><span class="toc-number">53.</span> <span class="toc-text">本地涩图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%BDwife"><span class="toc-number">54.</span> <span class="toc-text">抽wife</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%BC%E9%9F%B3%E9%A6%96%E5%AD%97%E6%AF%8D%E9%87%8A%E4%B9%89%E5%B7%A5%E5%85%B7"><span class="toc-number">55.</span> <span class="toc-text">拼音首字母释义工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E8%AF%AD%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0"><span class="toc-number">56.</span> <span class="toc-text">日语语法学习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E8%AF%B4"><span class="toc-number">57.</span> <span class="toc-text">小说</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nsfw%E5%9B%BE%E7%89%87%E8%AF%86%E5%88%AB"><span class="toc-number">58.</span> <span class="toc-text">nsfw图片识别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%85%E8%8D%89%E5%AF%BA%E6%B1%82%E7%AD%BE"><span class="toc-number">59.</span> <span class="toc-text">浅草寺求签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%BD%E6%89%91%E5%85%8B"><span class="toc-number">60.</span> <span class="toc-text">抽扑克</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E7%BE%A4%E4%B8%80%E5%A4%A9%E4%B8%80%E5%A4%AB%E4%B8%80%E5%A6%BB%E5%88%B6%E7%BE%A4%E8%80%81%E5%A9%86"><span class="toc-number">61.</span> <span class="toc-text">一群一天一夫一妻制群老婆</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#qq%E7%A9%BA%E9%97%B4%E8%A1%A8%E7%99%BD%E5%A2%99"><span class="toc-number">62.</span> <span class="toc-text">qq空间表白墙</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Real-CUGAN%E6%B8%85%E6%99%B0%E6%9C%AF"><span class="toc-number">63.</span> <span class="toc-text">Real-CUGAN清晰术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%95%E8%83%8E"><span class="toc-number">64.</span> <span class="toc-text">投胎</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E5%8A%AB"><span class="toc-number">65.</span> <span class="toc-text">打劫</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E7%BA%BF%E4%BB%A3%E7%A0%81%E8%BF%90%E8%A1%8C"><span class="toc-number">66.</span> <span class="toc-text">在线代码运行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%90%9C%E5%9B%BE"><span class="toc-number">67.</span> <span class="toc-text">搜图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%BE%E5%88%B0%E5%BE%97%E5%88%86"><span class="toc-number">68.</span> <span class="toc-text">签到得分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B2%99%E9%9B%95app"><span class="toc-number">69.</span> <span class="toc-text">沙雕app</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shindan"><span class="toc-number">70.</span> <span class="toc-text">shindan</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#steam"><span class="toc-number">71.</span> <span class="toc-text">steam</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%BD%E5%A1%94%E7%BD%97%E7%89%8C"><span class="toc-number">72.</span> <span class="toc-text">抽塔罗牌</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%BD-%E5%A1%94%E7%BD%97%E7%89%8C-%E5%A4%A7%E9%98%BF%E5%8D%A1%E7%BA%B3-%E5%B0%8F%E9%98%BF%E5%8D%A1%E7%BA%B3"><span class="toc-number">73.</span> <span class="toc-text">抽[塔罗牌|大阿卡纳|小阿卡纳]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%88%94%E7%8B%97%E6%97%A5%E8%AE%B0"><span class="toc-number">74.</span> <span class="toc-text">舔狗日记</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%90%9C%E7%95%AA"><span class="toc-number">75.</span> <span class="toc-text">搜番</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BF%BB%E8%AF%91"><span class="toc-number">76.</span> <span class="toc-text">翻译</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vits%E7%8C%AB%E9%9B%B7"><span class="toc-number">77.</span> <span class="toc-text">vits猫雷</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vtb%E8%AF%AD%E5%BD%95"><span class="toc-number">78.</span> <span class="toc-text">vtb语录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%92%B1%E5%8C%85"><span class="toc-number">79.</span> <span class="toc-text">钱包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8D%AE%E6%84%8F%E6%9F%A5%E5%8F%A5"><span class="toc-number">80.</span> <span class="toc-text">据意查句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%9F%E9%99%85%E6%88%98%E7%94%B2"><span class="toc-number">81.</span> <span class="toc-text">星际战甲</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%99%BE%E5%BA%A6%E6%96%87%E5%BF%83AI"><span class="toc-number">82.</span> <span class="toc-text">百度文心AI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%BD%E8%80%81%E5%A9%86"><span class="toc-number">83.</span> <span class="toc-text">抽老婆</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%8A%E5%A4%A9%E7%83%AD%E8%AF%8D"><span class="toc-number">84.</span> <span class="toc-text">聊天热词</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8C%9C%E5%8D%95%E8%AF%8D"><span class="toc-number">85.</span> <span class="toc-text">猜单词</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AC%BC%E4%B8%9C%E8%A5%BF"><span class="toc-number">86.</span> <span class="toc-text">鬼东西</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E6%B8%B8%E6%88%8F%E7%8E%8B%E6%8F%92%E4%BB%B6"><span class="toc-number">87.</span> <span class="toc-text">一些游戏王插件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%9B%86%E6%8D%A2%E7%A4%BE%E5%8D%A1%E4%BB%B7%E6%9F%A5%E8%AF%A2"><span class="toc-number">87.0.1.</span> <span class="toc-text">集换社卡价查询</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%88%E5%B9%95galgame%E5%9B%BE"><span class="toc-number">88.</span> <span class="toc-text">月幕galgame图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%81%87%E8%A7%81API"><span class="toc-number">89.</span> <span class="toc-text">遇见API</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%8E%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number"></span> <span class="toc-text">低优先级</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%9B%9E%E5%A4%8D"><span class="toc-number">1.</span> <span class="toc-text">人工智能回复</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bot-%E4%BB%BB%E6%84%8F%E6%96%87%E6%9C%AC-%E4%BB%BB%E6%84%8F%E4%B8%80%E5%8F%A5%E8%AF%9D%E5%9B%9E%E5%A4%8D"><span class="toc-number">2.</span> <span class="toc-text">@Bot 任意文本(任意一句话回复)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%8D%E5%85%B8%E5%8C%B9%E9%85%8D%E5%9B%9E%E5%A4%8D"><span class="toc-number">3.</span> <span class="toc-text">词典匹配回复</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E6%96%AD%E5%A4%8D%E8%AF%BB"><span class="toc-number">4.</span> <span class="toc-text">打断复读</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/07/29/bot/" title="bot"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.picgo.net/2024/07/28/_202407281210271478398c6bfc01dd.md.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="bot"/></a><div class="content"><a class="title" href="/2024/07/29/bot/" title="bot">bot</a><time datetime="2024-07-29T04:00:47.000Z" title="发表于 2024-07-29 12:00:47">2024-07-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/28/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E5%85%A8/" title="服务器安全"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.picgo.net/2024/07/28/_202407281210271478398c6bfc01dd.md.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="服务器安全"/></a><div class="content"><a class="title" href="/2024/07/28/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E5%85%A8/" title="服务器安全">服务器安全</a><time datetime="2024-07-28T04:43:07.000Z" title="发表于 2024-07-28 12:43:07">2024-07-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/28/vue/" title="vue"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.picgo.net/2024/07/28/_202407281210345fc9a2117d8d2b18.md.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="vue"/></a><div class="content"><a class="title" href="/2024/07/28/vue/" title="vue">vue</a><time datetime="2024-07-28T04:25:20.000Z" title="发表于 2024-07-28 12:25:20">2024-07-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/28/%E5%AE%89%E8%A3%85Mysql/" title="安装Mysql"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.picgo.net/2024/07/28/_202407281210314ce78a901fcc427f.md.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="安装Mysql"/></a><div class="content"><a class="title" href="/2024/07/28/%E5%AE%89%E8%A3%85Mysql/" title="安装Mysql">安装Mysql</a><time datetime="2024-07-28T04:18:28.000Z" title="发表于 2024-07-28 12:18:28">2024-07-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/28/%E6%B8%85%E7%90%86alist/" title="定期清理Alist备份文件"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.picgo.net/2024/07/28/_20240728121030bf8117189622a64d.md.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="定期清理Alist备份文件"/></a><div class="content"><a class="title" href="/2024/07/28/%E6%B8%85%E7%90%86alist/" title="定期清理Alist备份文件">定期清理Alist备份文件</a><time datetime="2024-07-28T04:05:09.000Z" title="发表于 2024-07-28 12:05:09">2024-07-28</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2024 By <a class="footer-bar-link" href="/" title="Jiang-Mak Yiu" target="_blank">Jiang-Mak Yiu</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" href="/%E6%9A%82%E6%97%B6%E7%A9%BA" title="彩蛋">彩蛋</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">4</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://blog.xn--5rtv63a.love/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="江江个人页"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="江江个人页"/><span class="back-menu-item-text">江江个人页</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/equipment/"><i class="anzhiyufont anzhiyu-icon-dice-d20 faa-tada" style="font-size: 0.9em;"></i><span> 我的装备</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Alist/" style="font-size: 0.88rem; color: rgb(148, 70, 68);">Alist<sup>1</sup></a><a href="/tags/Bot/" style="font-size: 0.88rem; color: rgb(51, 162, 105);">Bot<sup>1</sup></a><a href="/tags/DocKer/" style="font-size: 0.88rem; color: rgb(144, 147, 23);">DocKer<sup>1</sup></a><a href="/tags/Github/" style="font-size: 0.88rem; color: rgb(113, 141, 36);">Github<sup>1</sup></a><a href="/tags/windows/" style="font-size: 0.88rem; color: rgb(47, 193, 91);">windows<sup>2</sup></a><a href="/tags/%E5%9B%BE%E5%BA%8A/" style="font-size: 0.88rem; color: rgb(147, 21, 30);">图床<sup>1</sup></a><a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size: 0.88rem; color: rgb(22, 20, 94);">安全<sup>1</sup></a><a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 0.88rem; color: rgb(196, 24, 78);">工具<sup>2</sup></a><a href="/tags/%E5%BC%80%E5%8F%91/" style="font-size: 0.88rem; color: rgb(195, 70, 7);">开发<sup>4</sup></a><a href="/tags/%E6%94%BB%E5%87%BB/" style="font-size: 0.88rem; color: rgb(72, 191, 18);">攻击<sup>1</sup></a><a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 0.88rem; color: rgb(43, 114, 4);">教程<sup>2</sup></a><a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 0.88rem; color: rgb(75, 95, 28);">服务器<sup>6</sup></a><a href="/tags/%E7%BD%91%E7%BB%9C%E8%B0%83%E8%AF%95/" style="font-size: 0.88rem; color: rgb(184, 93, 74);">网络调试<sup>1</sup></a><a href="/tags/%E8%BD%AF%E4%BB%B6/" style="font-size: 0.88rem; color: rgb(156, 66, 27);">软件<sup>3</sup></a><a href="/tags/%E9%AD%94%E6%B3%95/" style="font-size: 0.88rem; color: rgb(110, 131, 57);">魔法<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("04/01/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2024 By 安知鱼 V1.6.12",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 Jiang-Mak Yiu 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.1/bubble/bubble.js"></script><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><script src="/js/anzhiyu/right_click_menu.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
